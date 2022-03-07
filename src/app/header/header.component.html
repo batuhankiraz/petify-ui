@@ -1,0 +1,84 @@
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mb-2" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">
+        <h2></h2>
+       <img class="petify-logo" src="../../assets/images/logo.png" >
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbar">
+        
+        <div class="navbar-nav">
+
+          <div class="d-flex align-items-center">
+            <a routerLink="/" class="nav-link float-right mx-3 h5 text-light header-title">
+              <i class="fa fa-home fa-2x"></i><br>
+              <span class="text-light">Home</span>
+            </a>
+          </div>
+
+        <div class="d-flex align-items-center">
+          <div>
+            <a routerLink="/advertise" class="nav-link float-right mx-3 h5 text-light header-title">
+              <i class="fa fa-paw fa-2x"></i><br>
+              <span class="text-light">Pets Adds</span>
+            </a>
+          </div>
+        </div>
+
+        </div>
+        <div class="navbar-nav">
+          <!-- Search form -->
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control header-search-bar" placeholder="Search anything in Petify...">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary bg-white ms-n3 mx-1 header-search-button" type="button">
+                  <i class="fa fa-search text-light"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+          
+        <div class="navbar-nav">
+        </div>
+        <div class="navbar-nav mr-8">
+          <li class="nav-item dropdown" ngbDropdown>
+            <a class="nav-link dropdown-toggle float-right mx-3 h5 text-light header-title btn-floating" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+              <i class="fa fa-user fa-2x"></i>
+            </a>
+            <span *ngIf="username; else userCenter" class="text-light">{{username}}</span>
+            
+            <ng-template #userCenter>
+              <span class="text-light">User Center</span>
+            </ng-template>
+            
+              <ul *ngIf="!sessionExist" class="dropdown-menu dropdown-primary" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+                <li ngbDropdownItem><a routerLink="/login" class="dropdown-item text-orange">Login</a></li>
+                <li ngbDropdownItem><a routerLink="/sign-up" class="dropdown-item text-orange">Sign Up</a></li>
+                <li ngbDropdownItem>
+                  <hr class="dropdown-divider">
+                </li>
+                <li ngbDropdownItem><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+          
+              <ul *ngIf="sessionExist" class="dropdown-menu dropdown-primary" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+                <li ngbDropdownItem><a routerLink="/my-account" class="dropdown-item text-orange">My Account</a></li>
+                <li ngbDropdownItem><a routerLink="/notifications" class="dropdown-item text-orange">Notifications</a></li>
+                <li ngbDropdownItem>
+                  <hr class="dropdown-divider">
+                </li>
+                <li ngbDropdownItem><a class="dropdown-item"><button (click)="logout()" class="text-orange" style="border: none; background-color: white;">Logout</button></a></li>
+              </ul>
+
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </header>

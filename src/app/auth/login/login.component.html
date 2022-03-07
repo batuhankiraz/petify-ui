@@ -1,0 +1,35 @@
+<section class="h-75 bg-image mt-11">
+    <div class="mask d-flex align-items-end h-75">
+        <div class="container mt-8 mr-login-form">
+            <div class="frame">
+                <div class="nav d-flex justify-content-center align-items-center sign-in-form-title title-bg">
+                    <h2 class="title-bg-text"><b>Login</b></h2>
+                </div>
+                <div ng-app ng-init="checked = false">
+                    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="login()"> 
+
+                        <label for="fullname">Username *</label>
+                        <input class="form-styling" type="text" name="username" [formControlName]="'username'" placeholder="" />
+
+                        <label class="mt-4" for="password">Password *</label> 
+                        <input class="form-styling" type="password" name="password" [formControlName]="'password'" placeholder="" /> 
+
+                        <div class="d-flex justify-content-center align-items-center">
+                            <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body mt-4"><span class="sign-in-form-text-item">Sign In</span></button>
+                        </div>
+
+                    </form>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="mb-4" *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched && !loginForm.get('username')?.valid && loginForm.get('username')?.touched"
+                             style="color: #84fab0; font-family: 'Arial', sans-serif;">
+                                Please check your credentials and try again.
+                            </span>
+                        </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center"> 
+                    <a routerLink="/" class="text-decoration-none"><span class="sign-in-form-title">Forgot your password ?</span></a> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
