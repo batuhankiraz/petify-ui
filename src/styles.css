@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
- 
+
 
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
@@ -47,7 +47,7 @@
     bottom: 12px;
     left: 12px;
   }
-  
+
   /* toast styles */
   .toast-title {
     font-weight: bold;
@@ -235,6 +235,14 @@
     margin-top: 10rem;
 }
 
+.mt-13 {
+  margin-top: 10.5rem;
+}
+
+.mt-14 {
+  margin-top: 11rem;
+}
+
 
 
 /*BOTTOM MARGIN*/
@@ -367,10 +375,25 @@
     margin-right: 20rem;
 }
 
+
+/* Negative Top Margin */
+.-mt-1 {
+  margin-top: -1.5rem;
+}
+
+
 .text-orange{
   color: #F89406;
 }
 
 .text-gold{
   color: #cc9425;
+}
+
+.bg-purple {
+  background-color: #682773;
+}
+
+bg-orange{
+  background-color: #F89406;
 }

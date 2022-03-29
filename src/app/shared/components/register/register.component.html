@@ -1,0 +1,124 @@
+<section class="h-75 bg-image mt-11">
+
+  <div class="mask d-flex align-items-end h-75 gradient-custom-3">
+
+    <div class="container h-75">
+
+      <div class="row d-flex justify-content-end align-items-end h-100">
+
+        <div class="col-12 col-md-9 col-lg-7 col-xl-12 mt-11 mb-5 w-75">
+
+          <form class="float-right ml-13" [formGroup]="registerForm" (ngSubmit)="register()">
+
+            <div class="row frame" style="border-radius: 15px;">
+
+              <div class="d-flex justify-content-center align-items-center mt-4 mb-4 sign-up-form-title">
+                <h2 class="title-bg-text"><b>Be A Member</b></h2>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-6">
+                  <label class="form-label white-text" for="firstName">Fist Name</label>
+                  <input type="text" [formControlName]="'firstName'" id="firstName" class="form-control form-control-lg form-styling" name="firstName"/>
+                  <div class="form-control-feedback"
+                       *ngIf="registerForm.get('firstName')?.errors && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
+                    <p *ngIf="registerForm.get('firstName')?.errors?.['required']" class="text-failed">First Name is required.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label white-text" for="lastName">Last Name</label>
+                  <input type="text" [formControlName]="'lastName'" id="lastName" class="form-control form-control-lg form-styling" name="lastName"/>
+                  <div class="form-control-feedback"
+                       *ngIf="registerForm.get('lastName')?.errors && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)">
+                    <p *ngIf="registerForm.get('lastName')?.errors?.['required']" class="text-failed">Last Name is required.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-6">
+                  <label class="form-label white-text">Email</label>
+                  <input type="text" [formControlName]="'email'" class="form-control form-control-lg form-styling" name="email"/>
+                  <div class="form-control-feedback"
+                       *ngIf="registerForm.get('email')?.errors && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                    <p *ngIf="registerForm.get('email')?.errors?.['required']" class="text-failed">Email is required.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label white-text" for="birthDate">Birthdate</label>
+                  <input type="text" [formControlName]="'birthDate'" id="birthDate" class="form-control form-control-lg form-styling" name="birthDate" />
+                  <div class="form-control-feedback"
+                       *ngIf="registerForm.get('birthDate')?.errors && (registerForm.get('birthDate')?.dirty || registerForm.get('birthDate')?.touched)">
+                    <p *ngIf="registerForm.get('birthDate')?.errors?.['required']" class="text-failed">Birthdate is required.</p>
+                    <p *ngIf="registerForm.get('birthDate')?.errors?.['pattern']" class="text-failed">Birthdate must be DD/MM/YYYY format.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-6">
+                  <label class="form-label white-text" for="phoneNumber">Phone Number</label>
+                  <input type="text" [formControlName]="'phoneNumber'" id="phoneNumber" class="form-control form-control-lg form-styling" name="phoneNumber"/>
+                  <div class="form-control-feedback"
+                       *ngIf="registerForm.get('phoneNumber')?.errors && (registerForm.get('phoneNumber')?.dirty || registerForm.get('phoneNumber')?.touched)">
+                    <p *ngIf="registerForm.get('phoneNumber')?.errors?.['required']" class="text-failed">Phone Number is required.</p>
+                    <p *ngIf="registerForm.get('phoneNumber')?.errors?.['maxLength']" class="text-failed">Phone Number must contain 11 character.</p>
+                    <p *ngIf="registerForm.get('phoneNumber')?.errors?.['minLength']" class="text-failed">Phone Number must contain 11 character.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label white-text">Gender</label><br>
+                  <select class="form-control form-control-lg form-styling -mt-1" name="gender" [formControlName]="'gender'">
+                    <option class="bg-purple text-light" value="Male">Male</option>
+                    <option class="bg-purple text-light" value="Female">Female</option>
+                    <option class="bg-purple text-light" value="N/A">N/A</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center row mt-2">
+                <div class="col-md-10">
+                  <label class="form-label white-text" for="password">Password</label>
+                  <input type="password" [formControlName]="'password'" id="password" class="form-control form-control-lg form-styling" name="password"/>
+                  <div class="form-control-feedback">
+                    <p *ngIf="registerForm.get('password')?.errors?.['pattern']" class="text-failed">
+                      Password must contains at least 8 characters with uppercase, lowercase letters and numbers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center row mt-2">
+                <div class="col-md-10">
+                  <label class="form-label white-text" for="address">Address</label>
+                  <textarea id="address" [formControlName]="'address'" class="form-control form-control-lg form-address-textarea" name="address" rows="3"></textarea>
+                  <div class="form-control-feedback"
+                       *ngIf="registerForm.get('address')?.errors && (registerForm.get('address')?.dirty || registerForm.get('address')?.touched)">
+                    <p *ngIf="registerForm.get('address')?.errors?.['required']" class="text-failed">Address is required.</p>
+                    <p *ngIf="registerForm.get('address')?.errors?.['maxLength']" class="text-failed">Address must contain at max 255 character.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body mt-2"><span class="white-text">Sign Up</span></button>
+              </div>
+
+              <p class="text-center mb-5 mt-3 white-text">Have already an account? <a routerLink="/login" class="fw-bold text-body"><u class="sign-up-to-login text-decoration-none">Please Login.</u></a></p>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
