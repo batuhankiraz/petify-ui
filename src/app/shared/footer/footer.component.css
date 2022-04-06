@@ -1,4 +1,4 @@
-footer.nb-footer {background:rgb(107, 1, 139); border-top:4px solid #b78c33;}
+footer.nb-footer {background:rgb(107, 1, 139); border-top:4px solid #b78c33; opacity: 0.70;}
 footer.nb-footer .about {margin:0 auto; margin-top:40px; max-width:1170px; text-align:center;}
 footer.nb-footer .about p {font-size:13px; color:#999; margin-top:30px;}
 footer.nb-footer .about .social-media {margin-top:15px;}

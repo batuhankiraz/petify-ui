@@ -1,1 +1,121 @@
-<p>advertise works!</p>
+<section class="h-75 bg-image mt-11-4 mb-5">
+  <div class="container">
+    <div class="col-lg-12 w-100 form-background">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="row advertise-panel-title mt-6">
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="h4 text-white">
+              <hr>
+                <b>CREATE YOUR ADVERTISE</b>
+              <hr>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="row advertise-panel-form mt-2 mb-6">
+          <div class="d-flex justify-content-center align-items-center mt-3">
+            <span class="h5 text-white advertise-form-icon">
+                <i class="fa fa-paw fa-5x"></i>
+            </span>
+          </div>
+
+          <div class="col-md-12">
+            <div class="p-3 py-5">
+              <form class="form-advertise" [formGroup]="advertiseForm" (ngSubmit)="advertise()">
+                <div class="row mt-2 mb-6">
+                  <div class="d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-md-8">
+                      <label class="form-label text-label text-white">Title: </label><br>
+                      <input class="form-control"
+                             type="text" name="title" [formControlName]="'title'" required />
+                      <div class="form-control-feedback"
+                           *ngIf="advertiseForm.get('title')?.errors && (advertiseForm.get('title')?.dirty)">
+                        <p *ngIf="advertiseForm.get('title')?.errors?.['required']" class="text-failed">Title is required.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3 mb-6">
+                  <div class="d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-md-8">
+                      <label class="form-label text-label text-white">Price Per Hour: </label><br>
+                      <input class="form-control"
+                             type="text" name="price" [formControlName]="'price'" required />
+                      <div class="form-control-feedback"
+                           *ngIf="advertiseForm.get('price')?.errors && (advertiseForm.get('price')?.dirty)">
+                        <p *ngIf="advertiseForm.get('price')?.errors?.['required']" class="text-failed">Price per hour is required.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3 mb-6">
+                  <div class="col-md-4">
+                    <label class="form-label text-label text-white">Country: </label><br>
+                    <input class="form-control"
+                           type="text" name="country" [formControlName]="'country'"required />
+                    <div class="form-control-feedback"
+                         *ngIf="advertiseForm.get('country')?.errors && advertiseForm.get('country')?.dirty">
+                      <p *ngIf="advertiseForm.get('country')?.errors?.['required']" class="text-failed">Country is required.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label text-label text-white">City: </label><br>
+                    <input class="form-control"
+                           type="text" name="city" [formControlName]="'city'"required />
+                    <div class="form-control-feedback"
+                         *ngIf="advertiseForm.get('city')?.errors && advertiseForm.get('city')?.dirty">
+                      <p *ngIf="advertiseForm.get('city')?.errors?.['required']" class="text-failed">City is required.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label text-label text-white">Town: </label><br>
+                    <input class="form-control"
+                           type="text" name="town" [formControlName]="'town'"required />
+                    <div class="form-control-feedback"
+                         *ngIf="advertiseForm.get('town')?.errors && advertiseForm.get('town')?.dirty">
+                      <p *ngIf="advertiseForm.get('town')?.errors?.['required']" class="text-failed">Town is required.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3 mb-6">
+                  <div class="d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-md-8">
+                      <label class="form-label text-label text-white">Pet Preferences: </label><br>
+                      <input class="form-control"
+                             type="text" name="petPreferences" [formControlName]="'petPreferences'"required />
+                      <div class="form-control-feedback"
+                           *ngIf="advertiseForm.get('petPreferences')?.errors && advertiseForm.get('petPreferences')?.dirty">
+                        <p *ngIf="advertiseForm.get('petPreferences')?.errors?.['required']" class="text-failed">Pet preferences is required.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3 mb-6">
+                  <div class="d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-md-8">
+                      <label class="form-label text-label text-white">Description: </label><br>
+                      <textarea class="form-control"
+                                id="description" [formControlName]="'description'" name="address" rows="4" required></textarea>
+                      <div class="form-control-feedback"
+                           *ngIf="advertiseForm.get('description')?.errors && advertiseForm.get('description')?.dirty">
+                        <p *ngIf="advertiseForm.get('description')?.errors?.['required']" class="text-failed">Description is required.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                  <button class="btn btn-block submit-button text-white" type="submit"><b class="h6">Complete My Advertise</b></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

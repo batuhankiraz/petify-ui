@@ -1,26 +1,19 @@
 <div class="container rounded bg-white mt-12 mb-5">
-
   <mat-tab-group animationDuration="1000ms" class="w-100">
 
     <mat-tab label="My Informations">
       <div class="row w-100">
-
-        <div class="col-md-4 border-right gradient-custom-4">
-
+        <div class="col-md-12 border-right gradient-custom-4">
           <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="150"><br>
             <span class="font-weight-bold">{{user?.firstName}} {{user?.lastName}}</span>
             <span class="text-black-50">{{user?.username}}</span>
           </div>
         </div>
-        <div class="col-md-8">
-
+        <div class="col-md-12">
           <div class="p-3 py-5">
-
             <form class="form-signin" [formGroup]="updateProfileForm" (ngSubmit)="updateProfile()">
-
               <div class="row mt-2">
-
                 <div class="col-md-6">
                   <label class="form-label text-label">First Name</label><br>
                   <input class="form-control"
@@ -30,7 +23,6 @@
                     <p *ngIf="updateProfileForm.get('firstName')?.errors?.['required']" class="text-failed">First Name is required.</p>
                   </div>
                 </div>
-
                 <div class="col-md-6">
                   <label class="form-label text-label">Last Name</label><br>
                   <input class="form-control"
@@ -40,10 +32,8 @@
                     <p *ngIf="updateProfileForm.get('lastName')?.errors?.['required']" class="text-failed">Last Name is required.</p>
                   </div>
                 </div>
-
               </div>
               <div class="row mt-3">
-
                 <div class="col-md-6">
                   <label class="form-label text-label">E Mail</label><br>
                   <input class="form-control"
@@ -54,7 +44,6 @@
                     <p *ngIf="updateProfileForm.get('eMail')?.errors?.['pattern']" class="text-failed">Email address must contain at least the @ character.</p>
                   </div>
                 </div>
-
                 <div class="col-md-6">
                   <label class="form-label text-label">Phone</label><br>
                   <input class="form-control"
@@ -66,10 +55,8 @@
                     <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['minLength']" class="text-failed">Phone Number must contain 11 character.</p>
                   </div>
                 </div>
-
               </div>
               <div class="row mt-3">
-
                 <div class="col-md-6">
                   <label class="form-label text-label">Birthdate</label><br>
                   <input class="form-control"
@@ -80,7 +67,6 @@
                     <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['pattern']" class="text-failed">Birthdate must be DD/MM/YYYY format.</p>
                   </div>
                 </div>
-
                 <div class="col-md-6">
                   <label class="form-label text-label">Gender</label><br>
                   <select class="form-control" name="gender" [formControlName]="'gender'" [ngModel]="user?.gender">
@@ -89,11 +75,8 @@
                     <option class="bg-purple text-light" value="N/A">N/A</option>
                   </select>
                 </div>
-
               </div>
-
               <div class="row mt-3">
-
                 <div class="col-md-12">
                   <label class="form-label text-label">Address</label><br>
                   <textarea class="form-control"
@@ -104,42 +87,42 @@
                     <p *ngIf="updateProfileForm.get('address')?.errors?.['maxLength']" class="text-failed">Address must contain at max 255 character.</p>
                   </div>
                 </div>
-
               </div>
-
               <div class="d-flex justify-content-center mt-4">
                 <button class="btn btn-success btn-block gradient-custom-4 text-light" type="submit">Update My Profile</button>
               </div>
-
             </form>
-
           </div>
-
         </div>
-
       </div>
     </mat-tab>
 
     <mat-tab label="My Adverts">
-
-      <div class="row w-100">
-
-        <div class="col-md-4 border-right gradient-custom-4">
-          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-            <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="150"><br>
-            <span class="font-weight-bold">{{user?.firstName}} {{user?.lastName}}</span>
-            <span class="text-black-50">{{user?.username}}</span>
+      <div class="col-md-12 border-right gradient-custom-4">
+        <div class="row w-100">
+          <div class="col-md-10">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+              <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="150"><br>
+              <span class="font-weight-bold">{{user?.firstName}} {{user?.lastName}}</span>
+              <span class="text-black-50">{{user?.username}}</span>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+              <a routerLink="/advertise" class="mt-8">
+                <span class="font-weight-bold"><i class="fa fa-plus-square fa-4x add-advert"></i></span>
+              </a><hr>
+              <span class="text-gold h5">Create New Advert</span>
+            </div>
           </div>
         </div>
-
       </div>
+
 
     </mat-tab>
 
     <mat-tab label="My Favourites">
-
       <div class="row w-100">
-
         <div class="col-md-4 border-right gradient-custom-4">
           <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="150"><br>
@@ -147,9 +130,7 @@
             <span class="text-black-50">{{user?.username}}</span>
           </div>
         </div>
-
       </div>
-
     </mat-tab>
 
   </mat-tab-group>

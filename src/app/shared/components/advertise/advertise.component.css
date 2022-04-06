@@ -1,0 +1,41 @@
+.form-background{
+  width: 100%;
+  background: -webkit-linear-gradient(to left top, rgb(2, 150, 189), rgb(255, 230, 79), rgb(253, 6, 183));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left top, rgb(2, 150, 189), rgb(255, 230, 79), rgb(253, 6, 183));
+  border-radius: 10px;
+}
+
+.advertise-panel-title{
+  height: 15vh;
+  width: 70rem;
+  border-radius: 5px 45px;
+  background-color: rgb(89, 88, 88);
+  opacity: 0.55;
+}
+
+.advertise-panel-form{
+  width: 70rem;
+  border-radius: 45px 5px;
+  background-color: rgb(89, 88, 88);
+  opacity: 0.55;
+
+}
+
+.advertise-form-icon{
+  z-index: -1;
+}
+
+.form-advertise{
+  z-index: +1;
+}
+
+.submit-button{
+  height: 8vh;
+  background-color: #030303;
+  border-radius: 20px;
+}
+
+.text-green{
+  color: green;
+}

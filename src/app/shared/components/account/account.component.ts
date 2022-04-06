@@ -25,7 +25,8 @@ export class AccountComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private updateProfileService: UpdateProfileService
-  ) {
+  )
+  {
     this.updateProfileDto = {
       firstName: '',
       lastName: '',
@@ -119,10 +120,9 @@ export class AccountComponent implements OnInit {
     this.updateProfileDto.gender = this.updateProfileForm.get('gender')!.value;
     this.updateProfileDto.birthDate = this.updateProfileForm.get('birthDate')!.value;
     this.updateProfileDto.address = this.updateProfileForm.get('address')!.value;
-    console.log(this.updateProfileDto)
 
     this.updateProfileService.updateProfile(this.updateProfileDto).subscribe(() => {
-      console.log(this.updateProfileDto)
+
     });
   }
 }
