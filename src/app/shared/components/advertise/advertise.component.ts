@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {AlertService} from "../../../core/services/alert/alert.service";
 import {ToastrService} from "ngx-toastr";
@@ -14,16 +14,17 @@ import {AuthService} from "../../../core/services/auth/auth.service";
 })
 export class AdvertiseComponent implements OnInit {
 
+  private price_big_decimal_regex = "(0|[1-9]\\d*)?(\\.\\d+)?(?<=\\d)$";
+
   advertiseDto!: AdvertiseDto;
   advertiseForm!: FormGroup;
 
   constructor(
-  private router: Router,
-  private alertService: AlertService,
-  private advertiseService: AdvertiseService,
-  private toastrService: ToastrService,
-  private authService: AuthService)
-  {
+    private router: Router,
+    private alertService: AlertService,
+    private advertiseService: AdvertiseService,
+    private toastrService: ToastrService,
+    private authService: AuthService) {
     this.advertiseDto = {
       id: '',
       token: this.authService.getJwtToken(),
@@ -45,43 +46,44 @@ export class AdvertiseComponent implements OnInit {
      */
     this.advertiseForm = new FormGroup({
 
-      title : new FormControl('',
+      title: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      description : new FormControl('',
+      description: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      price : new FormControl('',
+      price: new FormControl('',
+        [
+          Validators.required,
+          Validators.pattern(this.price_big_decimal_regex)
+        ]
+      ),
+
+      country: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      country : new FormControl('',
+      city: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      city : new FormControl('',
+      town: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      town : new FormControl('',
-        [
-          Validators.required
-        ]
-      ),
-
-      petPreferences : new FormControl('',
+      petPreferences: new FormControl('',
         [
           Validators.required
         ]
@@ -91,7 +93,7 @@ export class AdvertiseComponent implements OnInit {
 
   }
 
-  advertise(){
+  advertise() {
 
     this.advertiseDto.title = this.advertiseForm.get('title')!.value;
     this.advertiseDto.description = this.advertiseForm.get('description')!.value;
@@ -108,7 +110,7 @@ export class AdvertiseComponent implements OnInit {
             queryParams: {
               new_advertise: 'true'
             }
-        });
+          });
       },
       () => {
         this.toastrService.error('Sorry. Something went wrong at the stage of your advert..');

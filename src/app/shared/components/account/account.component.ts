@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/core/services/auth/auth.service';
-import { UserModel } from 'src/app/core/models/user.model';
+import {Observable} from 'rxjs';
+import {AuthService} from 'src/app/core/services/auth/auth.service';
+import {UserModel} from 'src/app/core/models/user.model';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegisterDto} from "../../../core/requests/register.dto";
 import {UpdateProfileService} from "../../../core/services/update-profile/update-profile.service";
@@ -25,8 +25,7 @@ export class AccountComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private updateProfileService: UpdateProfileService
-  )
-  {
+  ) {
     this.updateProfileDto = {
       firstName: '',
       lastName: '',
@@ -48,32 +47,31 @@ export class AccountComponent implements OnInit {
     this.user;
 
 
-
     /**
      *     - Update Profile Form Validation's
      */
     this.updateProfileForm = new FormGroup({
 
-      firstName : new FormControl('',
+      firstName: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      lastName : new FormControl('',
+      lastName: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      eMail : new FormControl('',
+      eMail: new FormControl('',
         [
           Validators.required,
           Validators.pattern(this.email_regex)
         ]
       ),
 
-      phoneNumber : new FormControl('',
+      phoneNumber: new FormControl('',
         [
           Validators.required,
           Validators.maxLength(11),
@@ -81,38 +79,38 @@ export class AccountComponent implements OnInit {
         ]
       ),
 
-      gender : new FormControl('',
+      gender: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      birthDate : new FormControl('',
+      birthDate: new FormControl('',
         [
           Validators.required,
           Validators.pattern(this.date_regex)
         ]
       ),
 
-      address : new FormControl('', [
-        Validators.required,
-        Validators.maxLength(255)
+      address: new FormControl('', [
+          Validators.required,
+          Validators.maxLength(255)
         ]
       )
     });
 
   }
 
-  getCurrentUserInformations(){
+  getCurrentUserInformations() {
 
-    this.authService.getCurrentUserFromRefreshToken().subscribe(
-      (data: UserModel)=> {
+    this.authService.getCurrentUserFromSession().subscribe(
+      (data: UserModel) => {
         this.user = data;
       }
     );
   }
 
-  updateProfile(){
+  updateProfile() {
     this.updateProfileDto.firstName = this.updateProfileForm.get('firstName')!.value;
     this.updateProfileDto.lastName = this.updateProfileForm.get('lastName')!.value;
     this.updateProfileDto.eMail = this.updateProfileForm.get('eMail')!.value;

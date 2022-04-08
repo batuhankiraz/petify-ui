@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth/auth.service';
-import { UserModel } from 'src/app/core/models/user.model';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from 'src/app/core/services/auth/auth.service';
+import {UserModel} from 'src/app/core/models/user.model';
 
 @Component({
   selector: 'app-homepage',
@@ -9,7 +9,8 @@ import { UserModel } from 'src/app/core/models/user.model';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
 

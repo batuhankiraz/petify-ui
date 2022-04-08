@@ -13,19 +13,23 @@
               <div class="d-flex justify-content-center row mt-2">
                 <div class="col-md-10">
                   <label class="form-label white-text">Verification Token</label>
-                  <input type="text" [formControlName]="'verificationToken'" id="verificationToken" class="form-control form-control-lg form-styling" name="verificationToken"/>
+                  <input type="text" [formControlName]="'verificationToken'" id="verificationToken"
+                         class="form-control form-control-lg form-styling" name="verificationToken"/>
                   <div class="form-control-feedback">
-                    <p *ngIf="accountVerificationForm.get('verificationToken')?.errors?.['required']" class="text-failed">
+                    <p *ngIf="accountVerificationForm.get('verificationToken')?.errors?.['required']"
+                       class="text-failed">
                       Please enter your verification token.
                     </p>
                   </div>
                   <div class="form-control-feedback">
-                    <p *ngIf="accountVerificationForm.get('verificationToken')?.errors?.['minLength']" class="text-failed">
+                    <p *ngIf="accountVerificationForm.get('verificationToken')?.errors?.['minLength']"
+                       class="text-failed">
                       Verification token must contain 6 digit.
                     </p>
                   </div>
                   <div class="form-control-feedback">
-                    <p *ngIf="accountVerificationForm.get('verificationToken')?.errors?.['maxLength']" class="text-failed">
+                    <p *ngIf="accountVerificationForm.get('verificationToken')?.errors?.['maxLength']"
+                       class="text-failed">
                       Verification token must contain 6 digit.
                     </p>
                   </div>
@@ -33,7 +37,8 @@
               </div>
 
               <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body mt-2 mb-5"><span class="white-text">Activate My Account</span></button>
+                <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body mt-2 mb-5">
+                  <span class="white-text">Activate My Account</span></button>
               </div>
 
             </div>

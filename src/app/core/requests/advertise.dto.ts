@@ -1,4 +1,4 @@
-export interface AdvertiseDto{
+export interface AdvertiseDto {
 
   id: string;
   token: string;

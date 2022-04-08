@@ -11,7 +11,8 @@ export class AdvertiseService {
 
   private advertise_url = environment.apiBaseUrl + '/advertise/add-advertise';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
 
   advertise(advertiseDto: AdvertiseDto): Observable<any> {

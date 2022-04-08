@@ -29,10 +29,11 @@
                     <div class="col-md-8">
                       <label class="form-label text-label text-white">Title: </label><br>
                       <input class="form-control"
-                             type="text" name="title" [formControlName]="'title'" required />
+                             type="text" name="title" [formControlName]="'title'" required/>
                       <div class="form-control-feedback"
                            *ngIf="advertiseForm.get('title')?.errors && (advertiseForm.get('title')?.dirty)">
-                        <p *ngIf="advertiseForm.get('title')?.errors?.['required']" class="text-failed">Title is required.</p>
+                        <p *ngIf="advertiseForm.get('title')?.errors?.['required']" class="text-failed">Title is
+                          required.</p>
                       </div>
                     </div>
                   </div>
@@ -42,10 +43,13 @@
                     <div class="col-md-8">
                       <label class="form-label text-label text-white">Price Per Hour: </label><br>
                       <input class="form-control"
-                             type="text" name="price" [formControlName]="'price'" required />
+                             type="text" name="price" [formControlName]="'price'" required/>
                       <div class="form-control-feedback"
                            *ngIf="advertiseForm.get('price')?.errors && (advertiseForm.get('price')?.dirty)">
-                        <p *ngIf="advertiseForm.get('price')?.errors?.['required']" class="text-failed">Price per hour is required.</p>
+                        <p *ngIf="advertiseForm.get('price')?.errors?.['required']" class="text-failed">Price per hour
+                          is required.</p>
+                        <p *ngIf="advertiseForm.get('price')?.errors?.['pattern']" class="text-failed">Please enter a
+                          valid price value. Exp: 0.5, 1, 1.0, 1.5 </p>
                       </div>
                     </div>
                   </div>
@@ -54,28 +58,31 @@
                   <div class="col-md-4">
                     <label class="form-label text-label text-white">Country: </label><br>
                     <input class="form-control"
-                           type="text" name="country" [formControlName]="'country'"required />
+                           type="text" name="country" [formControlName]="'country'" required/>
                     <div class="form-control-feedback"
                          *ngIf="advertiseForm.get('country')?.errors && advertiseForm.get('country')?.dirty">
-                      <p *ngIf="advertiseForm.get('country')?.errors?.['required']" class="text-failed">Country is required.</p>
+                      <p *ngIf="advertiseForm.get('country')?.errors?.['required']" class="text-failed">Country is
+                        required.</p>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <label class="form-label text-label text-white">City: </label><br>
                     <input class="form-control"
-                           type="text" name="city" [formControlName]="'city'"required />
+                           type="text" name="city" [formControlName]="'city'" required/>
                     <div class="form-control-feedback"
                          *ngIf="advertiseForm.get('city')?.errors && advertiseForm.get('city')?.dirty">
-                      <p *ngIf="advertiseForm.get('city')?.errors?.['required']" class="text-failed">City is required.</p>
+                      <p *ngIf="advertiseForm.get('city')?.errors?.['required']" class="text-failed">City is
+                        required.</p>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <label class="form-label text-label text-white">Town: </label><br>
                     <input class="form-control"
-                           type="text" name="town" [formControlName]="'town'"required />
+                           type="text" name="town" [formControlName]="'town'" required/>
                     <div class="form-control-feedback"
                          *ngIf="advertiseForm.get('town')?.errors && advertiseForm.get('town')?.dirty">
-                      <p *ngIf="advertiseForm.get('town')?.errors?.['required']" class="text-failed">Town is required.</p>
+                      <p *ngIf="advertiseForm.get('town')?.errors?.['required']" class="text-failed">Town is
+                        required.</p>
                     </div>
                   </div>
                 </div>
@@ -84,10 +91,11 @@
                     <div class="col-md-8">
                       <label class="form-label text-label text-white">Pet Preferences: </label><br>
                       <input class="form-control"
-                             type="text" name="petPreferences" [formControlName]="'petPreferences'"required />
+                             type="text" name="petPreferences" [formControlName]="'petPreferences'" required/>
                       <div class="form-control-feedback"
                            *ngIf="advertiseForm.get('petPreferences')?.errors && advertiseForm.get('petPreferences')?.dirty">
-                        <p *ngIf="advertiseForm.get('petPreferences')?.errors?.['required']" class="text-failed">Pet preferences is required.</p>
+                        <p *ngIf="advertiseForm.get('petPreferences')?.errors?.['required']" class="text-failed">Pet
+                          preferences is required.</p>
                       </div>
                     </div>
                   </div>
@@ -97,16 +105,19 @@
                     <div class="col-md-8">
                       <label class="form-label text-label text-white">Description: </label><br>
                       <textarea class="form-control"
-                                id="description" [formControlName]="'description'" name="address" rows="4" required></textarea>
+                                id="description" [formControlName]="'description'" name="address" rows="4"
+                                required></textarea>
                       <div class="form-control-feedback"
                            *ngIf="advertiseForm.get('description')?.errors && advertiseForm.get('description')?.dirty">
-                        <p *ngIf="advertiseForm.get('description')?.errors?.['required']" class="text-failed">Description is required.</p>
+                        <p *ngIf="advertiseForm.get('description')?.errors?.['required']" class="text-failed">
+                          Description is required.</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="d-flex justify-content-center mt-4">
-                  <button class="btn btn-block submit-button text-white" type="submit"><b class="h6">Complete My Advertise</b></button>
+                  <button class="btn btn-block submit-button text-white" type="submit"><b class="h6">Complete My
+                    Advertise</b></button>
                 </div>
               </form>
             </div>

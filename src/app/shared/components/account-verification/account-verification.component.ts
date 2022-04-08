@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AlertService} from "../../../core/services/alert/alert.service";
@@ -21,8 +21,7 @@ export class AccountVerificationComponent implements OnInit {
     private alertService: AlertService,
     private activatedRoute: ActivatedRoute,
     private registerService: RegisterService,
-    private toastrService: ToastrService)
-  {
+    private toastrService: ToastrService) {
     this.verificationToken = '';
   }
 
@@ -38,7 +37,7 @@ export class AccountVerificationComponent implements OnInit {
       });
 
     this.accountVerificationForm = new FormGroup({
-      verificationToken : new FormControl('',
+      verificationToken: new FormControl('',
         [
           Validators.required,
           Validators.minLength(6),
@@ -48,13 +47,13 @@ export class AccountVerificationComponent implements OnInit {
 
   }
 
-  accountVerification(){
+  accountVerification() {
     this.verificationToken = this.accountVerificationForm.get('verificationToken')!.value;
 
     this.registerService.accountVerification(this.verificationToken).subscribe(() => {
 
         this.router.navigate(['/login'], {
-          queryParams: { activation: 'true' }
+          queryParams: {activation: 'true'}
         });
       },
       () => {

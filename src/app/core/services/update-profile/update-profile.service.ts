@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
 import {UpdateProfileDto} from "../../requests/update.profile.dto";
@@ -10,7 +10,8 @@ export class UpdateProfileService {
 
   private update_profile_url = environment.apiBaseUrl + '/my-account/update-profile';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   updateProfile(updateProfileDto: UpdateProfileDto) {
 

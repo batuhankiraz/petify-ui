@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '../../../core/services/auth/auth.service';
-import { LoginDto } from '../../../core/requests/login.dto';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {AuthService} from '../../../core/services/auth/auth.service';
+import {LoginDto} from '../../../core/requests/login.dto';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +21,12 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private toastrService: ToastrService)
-    {
-      this.loginDto = {
-        username: '',
-        password: ''
+    private toastrService: ToastrService) {
+    this.loginDto = {
+      username: '',
+      password: ''
     };
-   }
+  }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -44,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login(){
+  login() {
 
     this.isError = false;
     this.loginDto.username = this.loginForm.get('username')?.value;
@@ -54,8 +53,7 @@ export class LoginComponent implements OnInit {
       if (data) {
         this.router.navigateByUrl('/');
         this.toastrService.success('Login Successful');
-      }
-      else {
+      } else {
         this.isError = true;
         console.log(this.isError)
       }

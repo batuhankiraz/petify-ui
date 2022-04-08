@@ -8,36 +8,36 @@ body {
 }
 
 .form-control:focus {
-    box-shadow: red;
-    border-color: #F89406
+  box-shadow: red;
+  border-color: #F89406
 }
 
 .profile-button {
-    background: #BA68C8;
-    box-shadow: none;
-    border: none
+  background: #BA68C8;
+  box-shadow: none;
+  border: none
 }
 
 .profile-button:hover {
-    background: #682773
+  background: #682773
 }
 
 .profile-button:focus {
-    background: #682773;
-    box-shadow: none
+  background: #682773;
+  box-shadow: none
 }
 
 .profile-button:active {
-    background: #682773;
-    box-shadow: none
+  background: #682773;
+  box-shadow: none
 }
 
 .back:hover {
-    color: #682773;
-    cursor: pointer
+  color: #682773;
+  cursor: pointer
 }
 
-.has-success{
+.has-success {
   box-shadow: none;
   border-color: lightgreen;
 }
@@ -93,6 +93,6 @@ body {
   font-weight: 700;
 }
 
-.add-advert{
+.add-advert {
   color: #F89406;
 }

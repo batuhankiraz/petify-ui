@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { RegisterDto } from '../../../core/requests/register.dto';
-import { RegisterService } from '../../../core/services/register/register.service';
-import { Router } from '@angular/router';
-import { AlertService } from '../../../core/services/alert/alert.service';
-import { ToastrService } from 'ngx-toastr';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {RegisterDto} from '../../../core/requests/register.dto';
+import {RegisterService} from '../../../core/services/register/register.service';
+import {Router} from '@angular/router';
+import {AlertService} from '../../../core/services/alert/alert.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -23,37 +23,36 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private alertService: AlertService,
     private registerService: RegisterService,
-    private toastrService: ToastrService)
-    {
+    private toastrService: ToastrService) {
 
-      this.registerDto = {
-        firstName: '',
-        lastName: '',
-        password: '',
-        birthDate: '',
-        phoneNumber: '',
-        email: '',
-        gender: '',
-        address: '',
-      };
-   }
+    this.registerDto = {
+      firstName: '',
+      lastName: '',
+      password: '',
+      birthDate: '',
+      phoneNumber: '',
+      email: '',
+      gender: '',
+      address: '',
+    };
+  }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
 
-      firstName : new FormControl('',
+      firstName: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      lastName : new FormControl('',
+      lastName: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      email : new FormControl('',
+      email: new FormControl('',
         [
           Validators.required
         ]
@@ -66,7 +65,7 @@ export class RegisterComponent implements OnInit {
         ]
       ),
 
-      phoneNumber : new FormControl('',
+      phoneNumber: new FormControl('',
         [
           Validators.required,
           Validators.maxLength(10),
@@ -74,20 +73,20 @@ export class RegisterComponent implements OnInit {
         ]
       ),
 
-      gender : new FormControl('',
+      gender: new FormControl('',
         [
           Validators.required
         ]
       ),
 
-      birthDate : new FormControl('',
+      birthDate: new FormControl('',
         [
           Validators.required,
           Validators.pattern(this.date_regex)
         ]
       ),
 
-      address : new FormControl('', [
+      address: new FormControl('', [
           Validators.required,
           Validators.maxLength(255)
         ]
@@ -108,11 +107,11 @@ export class RegisterComponent implements OnInit {
 
     this.registerService.register(this.registerDto).subscribe(() => {
 
-      this.router.navigate(['/account-verification'], { queryParams: { registered: 'true' } });
-    },
+        this.router.navigate(['/account-verification'], {queryParams: {registered: 'true'}});
+      },
       () => {
-      this.toastrService.error('Please try again.');
-    });
+        this.toastrService.error('Please try again.');
+      });
   }
 
 }

@@ -1,4 +1,4 @@
-export interface UpdateAdvertiseDto{
+export interface UpdateAdvertiseDto {
 
   id: string;
   title: string;

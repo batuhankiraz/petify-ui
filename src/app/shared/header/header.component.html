@@ -5,10 +5,11 @@
 
       <a class="navbar-brand js-scroll-trigger" href="../../../index.html">
         <h2></h2>
-        <img class="petify-logo" src="../../../assets/images/logo.png" >
+        <img class="petify-logo" src="../../../assets/images/logo.png">
       </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -50,7 +51,9 @@
         <div class="navbar-nav"></div>
         <div class="navbar-nav mr-8">
           <li class="nav-item dropdown" ngbDropdown>
-            <a class="nav-link dropdown-toggle float-right mx-3 h5 text-light header-title btn-floating" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            <a class="nav-link dropdown-toggle float-right mx-3 h5 text-light header-title btn-floating"
+               id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+               ngbDropdownToggle>
               <i class="fa fa-user fa-2x"></i>
             </a>
             <span *ngIf="username; else userCenter" class="text-light">{{username}}</span>
@@ -59,7 +62,8 @@
               <span class="text-light">User Center</span>
             </ng-template>
 
-            <ul *ngIf="!sessionExist" class="dropdown-menu dropdown-primary" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <ul *ngIf="!sessionExist" class="dropdown-menu dropdown-primary" ngbDropdownMenu
+                aria-labelledby="navbarScrollingDropdown">
               <li ngbDropdownItem><a routerLink="/login" class="dropdown-item text-orange">Login</a></li>
               <li ngbDropdownItem><a routerLink="/sign-up" class="dropdown-item text-orange">Sign Up</a></li>
               <li ngbDropdownItem>
@@ -68,13 +72,19 @@
               <li ngbDropdownItem><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
 
-            <ul *ngIf="sessionExist" class="dropdown-menu dropdown-primary" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <ul *ngIf="sessionExist" class="dropdown-menu dropdown-primary" ngbDropdownMenu
+                aria-labelledby="navbarScrollingDropdown">
               <li ngbDropdownItem><a routerLink="/my-account" class="dropdown-item text-orange">My Account</a></li>
-              <li ngbDropdownItem><a routerLink="/notifications" class="dropdown-item text-orange">Notifications</a></li>
+              <li ngbDropdownItem><a routerLink="/notifications" class="dropdown-item text-orange">Notifications</a>
+              </li>
               <li ngbDropdownItem>
                 <hr class="dropdown-divider">
               </li>
-              <li ngbDropdownItem><a class="dropdown-item"><button (click)="logout()" class="text-orange" style="border: none; background-color: white;">Logout</button></a></li>
+              <li ngbDropdownItem><a class="dropdown-item">
+                <button (click)="logout()" class="text-orange"
+                        style="border: none; background-color: black; width: 100%">Logout
+                </button>
+              </a></li>
             </ul>
           </li>
         </div>

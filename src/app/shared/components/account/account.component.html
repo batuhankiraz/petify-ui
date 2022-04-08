@@ -17,19 +17,23 @@
                 <div class="col-md-6">
                   <label class="form-label text-label">First Name</label><br>
                   <input class="form-control"
-                         type="text" name="firstName" [formControlName]="'firstName'" [ngModel]="user?.firstName" required />
+                         type="text" name="firstName" [formControlName]="'firstName'" [ngModel]="user?.firstName"
+                         required/>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('firstName')?.errors && (updateProfileForm.get('firstName')?.dirty || updateProfileForm.get('firstName')?.touched)">
-                    <p *ngIf="updateProfileForm.get('firstName')?.errors?.['required']" class="text-failed">First Name is required.</p>
+                    <p *ngIf="updateProfileForm.get('firstName')?.errors?.['required']" class="text-failed">First Name
+                      is required.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label text-label">Last Name</label><br>
                   <input class="form-control"
-                         type="text" name="lastName" [formControlName]="'lastName'" [ngModel]="user?.lastName" required />
+                         type="text" name="lastName" [formControlName]="'lastName'" [ngModel]="user?.lastName"
+                         required/>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('lastName')?.errors && (updateProfileForm.get('lastName')?.dirty || updateProfileForm.get('lastName')?.touched)">
-                    <p *ngIf="updateProfileForm.get('lastName')?.errors?.['required']" class="text-failed">Last Name is required.</p>
+                    <p *ngIf="updateProfileForm.get('lastName')?.errors?.['required']" class="text-failed">Last Name is
+                      required.</p>
                   </div>
                 </div>
               </div>
@@ -37,22 +41,28 @@
                 <div class="col-md-6">
                   <label class="form-label text-label">E Mail</label><br>
                   <input class="form-control"
-                         type="text" name="eMail" [formControlName]="'eMail'" [ngModel]="user?.username" required />
+                         type="text" name="eMail" [formControlName]="'eMail'" [ngModel]="user?.username" required/>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('eMail')?.errors && (updateProfileForm.get('eMail')?.dirty || updateProfileForm.get('eMail')?.touched)">
-                    <p *ngIf="updateProfileForm.get('eMail')?.errors?.['required']" class="text-failed">Email is required.</p>
-                    <p *ngIf="updateProfileForm.get('eMail')?.errors?.['pattern']" class="text-failed">Email address must contain at least the @ character.</p>
+                    <p *ngIf="updateProfileForm.get('eMail')?.errors?.['required']" class="text-failed">Email is
+                      required.</p>
+                    <p *ngIf="updateProfileForm.get('eMail')?.errors?.['pattern']" class="text-failed">Email address
+                      must contain at least the @ character.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label text-label">Phone</label><br>
                   <input class="form-control"
-                         type="text" name="phoneNumber" [formControlName]="'phoneNumber'" [ngModel]="user?.phoneNumber" maxlength="11" required />
+                         type="text" name="phoneNumber" [formControlName]="'phoneNumber'" [ngModel]="user?.phoneNumber"
+                         maxlength="11" required/>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('phoneNumber')?.errors && (updateProfileForm.get('phoneNumber')?.dirty || updateProfileForm.get('phoneNumber')?.touched)">
-                    <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['required']" class="text-failed">Phone Number is required.</p>
-                    <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['maxLength']" class="text-failed">Phone Number must contain 11 character.</p>
-                    <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['minLength']" class="text-failed">Phone Number must contain 11 character.</p>
+                    <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['required']" class="text-failed">Phone
+                      Number is required.</p>
+                    <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['maxLength']" class="text-failed">Phone
+                      Number must contain 11 character.</p>
+                    <p *ngIf="updateProfileForm.get('phoneNumber')?.errors?.['minLength']" class="text-failed">Phone
+                      Number must contain 11 character.</p>
                   </div>
                 </div>
               </div>
@@ -60,11 +70,14 @@
                 <div class="col-md-6">
                   <label class="form-label text-label">Birthdate</label><br>
                   <input class="form-control"
-                         type="text" name="birthDate" [formControlName]="'birthDate'" [ngModel]="user?.birthDate" required />
+                         type="text" name="birthDate" [formControlName]="'birthDate'" [ngModel]="user?.birthDate"
+                         required/>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('birthDate')?.errors && updateProfileForm.get('birthDate')?.dirty">
-                    <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['required']" class="text-failed">Birthdate is required.</p>
-                    <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['pattern']" class="text-failed">Birthdate must be DD/MM/YYYY format.</p>
+                    <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['required']" class="text-failed">Birthdate is
+                      required.</p>
+                    <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['pattern']" class="text-failed">Birthdate
+                      must be DD/MM/YYYY format.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -80,16 +93,20 @@
                 <div class="col-md-12">
                   <label class="form-label text-label">Address</label><br>
                   <textarea class="form-control"
-                            id="address" [formControlName]="'address'" name="address" rows="2" [ngModel]="user?.address" required></textarea>
+                            id="address" [formControlName]="'address'" name="address" rows="2" [ngModel]="user?.address"
+                            required></textarea>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('address')?.errors && updateProfileForm.get('address')?.dirty">
-                    <p *ngIf="updateProfileForm.get('address')?.errors?.['required']" class="text-failed">Address is required.</p>
-                    <p *ngIf="updateProfileForm.get('address')?.errors?.['maxLength']" class="text-failed">Address must contain at max 255 character.</p>
+                    <p *ngIf="updateProfileForm.get('address')?.errors?.['required']" class="text-failed">Address is
+                      required.</p>
+                    <p *ngIf="updateProfileForm.get('address')?.errors?.['maxLength']" class="text-failed">Address must
+                      contain at max 255 character.</p>
                   </div>
                 </div>
               </div>
               <div class="d-flex justify-content-center mt-4">
-                <button class="btn btn-success btn-block gradient-custom-4 text-light" type="submit">Update My Profile</button>
+                <button class="btn btn-success btn-block gradient-custom-4 text-light" type="submit">Update My Profile
+                </button>
               </div>
             </form>
           </div>
@@ -111,7 +128,8 @@
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
               <a routerLink="/advertise" class="mt-8">
                 <span class="font-weight-bold"><i class="fa fa-plus-square fa-4x add-advert"></i></span>
-              </a><hr>
+              </a>
+              <hr>
               <span class="text-gold h5">Create New Advert</span>
             </div>
           </div>
@@ -134,7 +152,6 @@
     </mat-tab>
 
   </mat-tab-group>
-
 
 
 </div>

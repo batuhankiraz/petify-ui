@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { LocalStorageService } from 'ngx-webstorage';
-import { map, tap } from 'rxjs/operators';
-import { LoginDto } from '../../requests/login.dto';
-import { LoginResponse } from '../../responses/login.response';
-import { UserModel } from 'src/app/core/models/user.model';
-import { environment } from 'src/environments/environment';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {LocalStorageService} from 'ngx-webstorage';
+import {map, tap} from 'rxjs/operators';
+import {LoginDto} from '../../requests/login.dto';
+import {LoginResponse} from '../../responses/login.response';
+import {UserModel} from 'src/app/core/models/user.model';
+import {environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,8 @@ export class AuthService {
   private login_url = environment.apiBaseUrl + '/auth/login';
   private logout_url = environment.apiBaseUrl + '/auth/logout';
   private refresh_token_url = environment.apiBaseUrl + '/auth/refresh/token';
-  private current_user_by_jwt_token_url = environment.apiBaseUrl + '/auth/current-user?jwtToken=';
+  private current_user_by_jwt_token_url = environment.apiBaseUrl + '/auth/current-user/token?jwtToken=';
+  private current_user_from_session_url = environment.apiBaseUrl + '/auth/current-user';
 
   refreshTokenPayload = {
     refreshToken: this.getRefreshToken(),
@@ -31,7 +32,7 @@ export class AuthService {
 
   login(loginDto: LoginDto): Observable<boolean> {
     return this.httpClient.post<LoginResponse>(this.login_url, loginDto)
-    .pipe(map(data => {
+      .pipe(map(data => {
 
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
@@ -46,7 +47,7 @@ export class AuthService {
   logout() {
 
     this.httpClient.post(this.logout_url, this.refreshTokenPayload,
-      { responseType: 'text' })
+      {responseType: 'text'})
       .subscribe(data => {
         console.log(data);
       }, error => {
@@ -62,7 +63,7 @@ export class AuthService {
   refreshToken() {
 
     return this.httpClient.post<LoginResponse>(this.refresh_token_url, this.refreshTokenPayload)
-    .pipe(tap(response => {
+      .pipe(tap(response => {
 
         this.localStorage.store('authenticationToken', response.authenticationToken);
         this.localStorage.store('expiresAt', response.expiresAt);
@@ -71,9 +72,14 @@ export class AuthService {
   }
 
 
-  getCurrentUserFromRefreshToken(): Observable<UserModel>{
+  getCurrentUserFromRefreshToken(): Observable<UserModel> {
 
     return this.httpClient.get<any>(this.current_user_by_jwt_token_url + this.getJwtToken());
+  }
+
+  getCurrentUserFromSession(): Observable<UserModel> {
+
+    return this.httpClient.get<any>(this.current_user_from_session_url);
   }
 
 
@@ -101,13 +107,12 @@ export class AuthService {
   }
 
 
-  isLoggedInUser(): boolean{
+  isLoggedInUser(): boolean {
 
-    if(this.getJwtToken() != null){
+    if (this.getJwtToken() != null) {
 
       return true;
-    }
-    else{
+    } else {
 
       return false;
     }
