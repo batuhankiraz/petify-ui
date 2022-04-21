@@ -25,7 +25,7 @@
 
           <div class="d-flex align-items-center">
             <div>
-              <a routerLink="/advertise" class="nav-link float-right mx-3 h5 text-light header-title">
+              <a routerLink="/pet-sitter-ads" class="nav-link float-right mx-3 h5 text-light header-title">
                 <i class="fa fa-paw fa-2x"></i><br>
                 <span class="text-light">Pets Adds</span>
               </a>
@@ -80,11 +80,9 @@
               <li ngbDropdownItem>
                 <hr class="dropdown-divider">
               </li>
-              <li ngbDropdownItem><a class="dropdown-item">
-                <button (click)="logout()" class="text-orange"
-                        style="border: none; background-color: black; width: 100%">Logout
-                </button>
-              </a></li>
+              <li ngbDropdownItem>
+                <a routerLink="/" (click)="logout()" class="dropdown-item text-orange">Logout</a>
+              </li>
             </ul>
           </li>
         </div>

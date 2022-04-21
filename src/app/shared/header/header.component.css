@@ -25,7 +25,6 @@
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgb(107, 1, 139), rgb(132, 0, 172));
-  opacity: 0.70;
 }
 
 .header-search-bar {
@@ -48,6 +47,9 @@
 }
 
 .dropdown-menu {
-  background-color: #030303;
+  background-color: rgb(77, 77, 77);
   opacity: 1;
+  height: 15vh;
+  width: 12rem;
+  border-radius: 5px;
 }

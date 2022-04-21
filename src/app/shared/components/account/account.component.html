@@ -69,15 +69,18 @@
               <div class="row mt-3">
                 <div class="col-md-6">
                   <label class="form-label text-label">Birthdate</label><br>
-                  <input class="form-control"
-                         type="text" name="birthDate" [formControlName]="'birthDate'" [ngModel]="user?.birthDate"
-                         required/>
+                  <div class="input-group">
+                    <input class="form-control" type="text" placeholder="yyyy-mm-dd"
+                           name="dp" [formControlName]="'birthDate'" [(ngModel)]="datePickerModel" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <span class="fa fa-calendar fa-2x date-picker ml-1" (click)="d.toggle()"></span>
+<!--                      <button class="btn btn-outline-secondary fa fa-calendar fa-2x" (click)="d.toggle()" type="button"></button>-->
+                    </div>
+                  </div>
                   <div class="form-control-feedback"
                        *ngIf="updateProfileForm.get('birthDate')?.errors && updateProfileForm.get('birthDate')?.dirty">
                     <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['required']" class="text-failed">Birthdate is
                       required.</p>
-                    <p *ngIf="updateProfileForm.get('birthDate')?.errors?.['pattern']" class="text-failed">Birthdate
-                      must be DD/MM/YYYY format.</p>
                   </div>
                 </div>
                 <div class="col-md-6">

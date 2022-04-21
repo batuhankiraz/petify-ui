@@ -313,6 +313,18 @@ mat-progress-spinner {
 
 /*LEFT MARGIN*/
 
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 1.5rem;
+}
+
+.ml-3 {
+  margin-left: 2rem;
+}
+
 .ml-6 {
     margin-left: 4rem;
 }
@@ -419,6 +431,13 @@ mat-progress-spinner {
   background-color: #682773;
 }
 
-bg-orange{
+.bg-orange{
   background-color: #F89406;
+}
+
+/* Button Looks Like Link */
+.button-link {
+  background: none!important;
+  border: none;
+  padding: 0!important;
 }

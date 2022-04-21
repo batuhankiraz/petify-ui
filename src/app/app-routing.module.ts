@@ -6,6 +6,7 @@ import {AccountComponent} from './shared/components/account/account.component';
 import {AdvertiseComponent} from './shared/components/advertise/advertise.component';
 import {HomepageComponent} from './shared/components/homepage/homepage.component';
 import {AccountVerificationComponent} from "./shared/components/account-verification/account-verification.component";
+import {PetSitterAdsComponent} from "./shared/components/pet-sitter-ads/pet-sitter-ads.component";
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'advertise', component: AdvertiseComponent},
   {path: 'my-account', component: AccountComponent},
-  {path: 'account-verification', component: AccountVerificationComponent}
+  {path: 'account-verification', component: AccountVerificationComponent},
+  {path: 'pet-sitter-ads', component: PetSitterAdsComponent}
 ];
 
 @NgModule({

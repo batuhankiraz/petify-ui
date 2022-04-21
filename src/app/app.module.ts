@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './shared/header/header.component';
 import {LoginComponent} from './shared/components/login/login.component';
 import {RegisterComponent} from './shared/components/register/register.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AlertService} from './core/services/alert/alert.service';
 import {NgxWebstorageModule} from 'ngx-webstorage';
@@ -23,6 +23,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {TokenInterceptor} from "./core/interceptors/token.interceptor";
 import {NetworkInterceptor} from "./core/interceptors/network.interceptor";
+import {PetSitterAdsComponent} from "./shared/components/pet-sitter-ads/pet-sitter-ads.component";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {NetworkInterceptor} from "./core/interceptors/network.interceptor";
     HomepageComponent,
     AdvertiseComponent,
     AccountComponent,
-    AccountVerificationComponent
+    AccountVerificationComponent,
+    PetSitterAdsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,8 @@ import {NetworkInterceptor} from "./core/interceptors/network.interceptor";
     MatButtonModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
+    FormsModule,
+    NgbModule,
   ],
   providers: [
     AlertService,

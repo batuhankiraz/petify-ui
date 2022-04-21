@@ -96,3 +96,8 @@ body {
 .add-advert {
   color: #F89406;
 }
+
+.date-picker{
+  color: #BA68C8;
+  cursor: pointer;
+}

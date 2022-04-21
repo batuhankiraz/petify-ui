@@ -1,11 +1,10 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {Observable} from 'rxjs';
 import {AuthService} from 'src/app/core/services/auth/auth.service';
 import {UserModel} from 'src/app/core/models/user.model';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {RegisterDto} from "../../../core/requests/register.dto";
 import {UpdateProfileService} from "../../../core/services/update-profile/update-profile.service";
 import {UpdateProfileDto} from "../../../core/requests/update.profile.dto";
+import {NgbInputDatepickerConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-account',
@@ -21,11 +20,13 @@ export class AccountComponent implements OnInit {
   user!: UserModel;
   updateProfileDto!: UpdateProfileDto;
   updateProfileForm!: FormGroup;
+  datePickerModel: any;
 
   constructor(
     private authService: AuthService,
-    private updateProfileService: UpdateProfileService
-  ) {
+    private updateProfileService: UpdateProfileService,
+    private config: NgbInputDatepickerConfig) {
+
     this.updateProfileDto = {
       firstName: '',
       lastName: '',
@@ -36,6 +37,12 @@ export class AccountComponent implements OnInit {
       address: '',
       token: this.authService.getJwtToken()
     };
+
+    config.minDate = {year: 1900, month: 1, day: 1};
+    config.maxDate = {year: 2099, month: 12, day: 31};
+    config.outsideDays = 'hidden';
+    config.autoClose = 'outside';
+    config.placement = ['top-start', 'top-end'];
   }
 
   ngOnInit(): void {
@@ -87,8 +94,7 @@ export class AccountComponent implements OnInit {
 
       birthDate: new FormControl('',
         [
-          Validators.required,
-          Validators.pattern(this.date_regex)
+          Validators.required
         ]
       ),
 

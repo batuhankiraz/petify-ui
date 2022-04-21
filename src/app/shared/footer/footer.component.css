@@ -1,7 +1,7 @@
 footer.nb-footer {
-  background: rgb(107, 1, 139);
+  background: rgb(77, 77, 77);
   border-top: 4px solid #b78c33;
-  opacity: 0.70;
+  position: center;
 }
 
 footer.nb-footer .about {
